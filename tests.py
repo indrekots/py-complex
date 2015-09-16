@@ -50,7 +50,20 @@ class TestComplexNumbers(unittest.TestCase):
     def test_subtract_with_operator_overloading(self):
         c1 = Complex(10, -3)
         c2 = Complex(-5, -2)
+
         self.assertEqual(str(c1 - c2), "15.00 - 1.00i", "Should equal '15.00 - 1.00i'")
+
+    def test_multiply(self):
+        c1 = Complex(13, -2)
+        c2 = Complex(-2, -5)
+
+        self.assertEqual(str(c1.multiply(c2)), "-36.00 - 61.00i", "Should equal '-36.00 - 61.00i'")
+
+    def test_multiply_with_operator_overloading(self):
+        c1 = Complex(1, -2)
+        c2 = Complex(-2, -4)
+
+        self.assertEqual(str(c1 * c2), "-10.00", "Should equal -10.00")
 
 if __name__ == '__main__':
     unittest.main()

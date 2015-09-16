@@ -31,3 +31,10 @@ class Complex:
 
     def __sub__(self, other):
         return self.subtract(other)
+
+    def multiply(self, other):
+        return Complex(self.real * other.real - self.imaginary * other.imaginary,
+            self.real * other.imaginary + self.imaginary * other.real)
+
+    def __mul__(self, other):
+       return self.multiply(other)
