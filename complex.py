@@ -19,3 +19,15 @@ class Complex:
             if n < 0: return " - "
             else: return " + "
         else: return ""
+
+    def add(self, other):
+        return Complex(self.real + other.real, self.imaginary + other.imaginary)
+
+    def __add__(self, other):
+        return self.add(other)
+
+    def subtract(self, other):
+        return Complex(self.real - other.real, self.imaginary - other.imaginary)
+
+    def __sub__(self, other):
+        return self.subtract(other)
