@@ -1,3 +1,5 @@
+from math import sqrt
+
 class Complex:
     real = None
     imaginary = None
@@ -47,3 +49,6 @@ class Complex:
 
     def __truediv__(self, other):
         return self.divide(other)
+
+    def abs(self):
+        return sqrt(self.real ** 2 + self.imaginary ** 2)

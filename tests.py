@@ -77,5 +77,10 @@ class TestComplexNumbers(unittest.TestCase):
 
         self.assertEqual(str(c1 / c2), "0.72 + 0.12i", "Should equal -200 + 142i")
 
+    def test_absolute_value(self):
+        c1 = Complex(6, 8)
+
+        self.assertEqual(c1.abs(), 10, "Should equal 10")
+
 if __name__ == '__main__':
     unittest.main()
