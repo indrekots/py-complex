@@ -37,4 +37,13 @@ class Complex:
             self.real * other.imaginary + self.imaginary * other.real)
 
     def __mul__(self, other):
-       return self.multiply(other)
+        return self.multiply(other)
+
+    def divide(self, other):
+        denom = other.real ** 2 + other.imaginary ** 2
+        new_real = (self.real * other.real + self.imaginary * other.imaginary) / denom
+        new_imaginary = (self.imaginary * other.real - self.real * other.imaginary) / denom
+        return Complex(new_real, new_imaginary)
+
+    def __truediv__(self, other):
+        return self.divide(other)

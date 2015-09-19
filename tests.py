@@ -65,5 +65,17 @@ class TestComplexNumbers(unittest.TestCase):
 
         self.assertEqual(str(c1 * c2), "-10.00", "Should equal -10.00")
 
+    def test_divide(self):
+        c1 = Complex(1, 2)
+        c2 = Complex(3, 4)
+
+        self.assertEqual(str(c1.divide(c2)), "0.44 + 0.08i", "Should equal 0.44 + 0.08i")
+
+    def test_divide_with_operator_overloading(self):
+        c1 = Complex(3, 13)
+        c2 = Complex(7, 17)
+
+        self.assertEqual(str(c1 / c2), "0.72 + 0.12i", "Should equal -200 + 142i")
+
 if __name__ == '__main__':
     unittest.main()
